@@ -1,4 +1,4 @@
-var test = {
+let test = {
 
     messagges:{
         loading: 'Loading...',
@@ -23,9 +23,8 @@ var test = {
        if(node.id == term){
             return node;
        }else if (node.children != null){
-            var i;
-            var result = null;
-            for(i=0; result == null && i < node.children.length; i++){
+            let result = null;
+            for(let i=0; result == null && i < node.children.length; i++){
                  result = test.search(node.children[i], term);
             }
             return result;
@@ -44,7 +43,7 @@ async function getData(){
 }
 
 function searchNode(){
-    var term = document.getElementById('objectId').value;
+    let term = document.getElementById('objectId').value;
 
     if(test.json.length == 0){
         setMyElementAttr('msg', 'innerHTML', test.messagges.noTreeSet);
@@ -57,7 +56,7 @@ function searchNode(){
         return;
     }
 
-    var find = test.search(test.json, term);
+    let find = test.search(test.json, term);
     if(find){
         setMyElementAttr('msg', 'innerHTML', `The node with id: <strong>${find.id}</strong> has the label: <strong>${find.label}</strong>`);
         setMyElementAttr('msg', 'class', 'success');
