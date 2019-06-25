@@ -64,7 +64,7 @@ function searchNode(){
         setMyElementAttr('searchMsg', 'innerHTML', `The node with id: <strong>${find.id}</strong> has the label: <strong>${find.label}</strong>`);
         setMyElementAttr('searchMsg', 'class', 'success');
     }else{
-        setMyElementAttr('searchMsg', 'innerHTML', `Not exists a node with the id: <strong>${term}</strong>`);
+        setMyElementAttr('searchMsg', 'innerHTML', `Does not exists a node with the id: <strong>${term}</strong>`);
         setMyElementAttr('searchMsg', 'class', 'error');
     }
     
