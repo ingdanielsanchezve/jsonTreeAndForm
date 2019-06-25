@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <form>
+            <h1>Json Tree</h1>
+            <fieldset>
+                <pre id="jsonTree" class="json"></pre>
+                <label id="msg"></label>
+                <legend><span class="number">1</span> Get the Json Tree Nodes</legend>
+                <button type="button" onclick="getData()">Click Me</button>
+                
+                <legend><span class="number">2</span> Search a Node </legend>
+                <label for="objectId">Id:</label>
+                <input type="number" name="objectId" id="objectId" placeholder="Enter an Id">
+                <button type="button" onclick="searchNode()">Search</button>
+            </fieldset>
+
+        </form>
+        <script src="js/helpers.js" async defer></script>
+        <script src="js/tree.js" async defer></script>
+    </body>
+</html>
