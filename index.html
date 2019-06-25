@@ -15,7 +15,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <!-- Tab links -->
+      <div class="tab">
+        <a href="#" class="tablinks active" onclick="openTab(event, 'Tree')">Tree Json</a>
+        <a href="#" class="tablinks" onclick="openTab(event, 'Form')">Form</a>
+      </div>
+                
+                
 
+      <div id="Tree" class="tabcontent active">
         <form>
             <h1>Json Tree</h1>
             <fieldset>
@@ -31,6 +39,11 @@
             </fieldset>
 
         </form>
+      </div>
+      <div id="Form" class="tabcontent">
+
+      </div>
+        
         <script src="js/helpers.js" async defer></script>
         <script src="js/tree.js" async defer></script>
     </body>
