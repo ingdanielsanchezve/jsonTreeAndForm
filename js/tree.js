@@ -37,9 +37,12 @@ async function getData(){
     setMyElementAttr('msg', 'class', '');
     setMyElementAttr('msg', 'innerHTML', test.messagges.loading);
     test.json = await test.loadJson();
-    setMyElementAttr('jsonTree', 'innerHTML', syntaxHighlight(JSON.stringify(test.json, 'undefined', 4)));
-    setMyElementAttr('jsonTree', 'class', 'pre');
-    setMyElementAttr('msg', 'innerHTML', '');
+    if(typeof test.json == 'object'){
+        setMyElementAttr('jsonTree', 'innerHTML', syntaxHighlight(JSON.stringify(test.json, 'undefined', 4)));
+        setMyElementAttr('jsonTree', 'class', 'pre');
+        setMyElementAttr('msg', 'innerHTML', '');
+        unSetMyElementAttr('searchBtn', 'disabled');
+    }
 }
 
 function searchNode(){
@@ -51,18 +54,18 @@ function searchNode(){
         return;
     }
     if(term.length == 0){
-        setMyElementAttr('msg', 'innerHTML', test.messagges.noIdProvide);
-        setMyElementAttr('msg', 'class', 'error');
+        setMyElementAttr('searchMsg', 'innerHTML', test.messagges.noIdProvide);
+        setMyElementAttr('searchMsg', 'class', 'error');
         return;
     }
 
     let find = test.search(test.json, term);
     if(find){
-        setMyElementAttr('msg', 'innerHTML', `The node with id: <strong>${find.id}</strong> has the label: <strong>${find.label}</strong>`);
-        setMyElementAttr('msg', 'class', 'success');
+        setMyElementAttr('searchMsg', 'innerHTML', `The node with id: <strong>${find.id}</strong> has the label: <strong>${find.label}</strong>`);
+        setMyElementAttr('searchMsg', 'class', 'success');
     }else{
-        setMyElementAttr('msg', 'innerHTML', `There's not a node with the id: <strong>${term}</strong>`);
-        setMyElementAttr('msg', 'class', 'error');
+        setMyElementAttr('searchMsg', 'innerHTML', `Not exists a node with the id: <strong>${term}</strong>`);
+        setMyElementAttr('searchMsg', 'class', 'error');
     }
     
 }

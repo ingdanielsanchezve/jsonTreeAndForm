@@ -67,6 +67,18 @@ button {
   margin-bottom: 10px;
 }
 
+button.ok {
+  background-color: #5fcf80;
+  border: 1px solid #5fcf80;
+  width: 49%;
+}
+
+button.cancel {
+  background-color: red;
+  border: 1px solid red;
+  width: 49%;
+}
+
 fieldset {
   margin-bottom: 30px;
   border: none;

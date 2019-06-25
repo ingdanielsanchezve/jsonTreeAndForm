@@ -26,6 +26,12 @@ function setMyElementAttr(id, attr, value){
 
 }
 
+function unSetMyElementAttr(id, attr){
+    var elem = document.getElementById(id);
+        elem.removeAttribute(attr);
+
+}
+
 function openTab(evt, tab) {
     // Declare all variables
     var i, tabcontent, tablinks;
